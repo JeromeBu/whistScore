@@ -1,7 +1,11 @@
 import React from "react";
-import App, { Lulu } from "./App";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import { createHistory as history } from "history";
+import App from "./App";
+import SettingRules from "./Views/SettingRules";
+import SettingPlayers from "./Views/SettingPlayers";
+import Game from "./Views/Game";
+import Home from "./Views/Home";
 
 const myRouter = () => (
   <Router history={history}>
@@ -11,18 +15,23 @@ const myRouter = () => (
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link to="/settingPlayers">Setting players</Link>
         </li>
         <li>
-          <Link to="/lulu">Topics</Link>
+          <Link to="/settingRules">Setting rules</Link>
+        </li>
+        <li>
+          <Link to="/game">Game</Link>
         </li>
       </ul>
 
       <hr />
       <App>
         <Switch>
-          <Route path="/about" component={About} />
-          <Route path="/lulu" component={Lulu} />
+          <Route exact path="/" component={Home} />
+          <Route path="/settingPlayers" component={SettingPlayers} />
+          <Route path="/settingRules" component={SettingRules} />
+          <Route path="/game" component={Game} />
         </Switch>
       </App>
     </React.Fragment>
@@ -30,15 +39,3 @@ const myRouter = () => (
 );
 
 export default myRouter;
-
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-);
-
-const About = () => (
-  <div>
-    <h2>About</h2>
-  </div>
-);

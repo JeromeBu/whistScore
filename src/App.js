@@ -1,11 +1,6 @@
 import React from "react";
-import styled from "styled-components";
-import { Button } from "@material-ui/core";
 import { NavBar } from "./Components/NavBar";
-
-const Wrapper = styled.div`
-  padding: 0 5rem 5rem 5rem;
-`;
+import PropTypes from "prop-types";
 
 const App = ({ children }) => (
   <React.Fragment>
@@ -14,12 +9,8 @@ const App = ({ children }) => (
   </React.Fragment>
 );
 
-export const Lulu = () => (
-  <Wrapper>
-    <Button variant="contained" color="primary">
-      Some Button
-    </Button>
-  </Wrapper>
-);
+App.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default App;
