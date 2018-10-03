@@ -1,16 +1,16 @@
 import React from "react";
-import { NavBar } from "./Components/NavBar";
 import PropTypes from "prop-types";
+import NavBar from "./Components/NavBar";
 
 const App = ({ children }) => (
   <React.Fragment>
-    <NavBar>This is nav Bar</NavBar>
+    <NavBar />
     {children}
   </React.Fragment>
 );
 
 App.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.object).isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default App;
