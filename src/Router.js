@@ -10,22 +10,6 @@ import Home from "./Views/Home";
 const myRouter = () => (
   <Router history={history}>
     <React.Fragment>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/settingPlayers">Setting players</Link>
-        </li>
-        <li>
-          <Link to="/settingRules">Setting rules</Link>
-        </li>
-        <li>
-          <Link to="/game">Game</Link>
-        </li>
-      </ul>
-
-      <hr />
       <App>
         <Switch>
           <Route exact path="/" component={Home} />

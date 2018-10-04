@@ -1,22 +1,26 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Wrapper } from "./styled";
+import { Wrapper, Bar, BarWrapper } from "./styled";
 // import FontAwesome from "react-fontawesome"
 
 const MenuButton = ({ showMenu, toogleMenu }) => (
+  // <Wrapper onClick={toogleMenu}>
+  //   {showMenu ? (
+  //     <div>
+  //       <p>Hide Menu</p>
+  //     </div>
+  //   ) : (
+  //     <div>
+  //       <p>Show Menu</p>
+  //     </div>
+  //   )}
+  // </Wrapper>
   <Wrapper onClick={toogleMenu}>
-    {showMenu ? (
-      <div>
-        <i className="fas fa-caret-right" />
-        <p>Hide Menu</p>
-      </div>
-    ) : (
-      <div>
-        {/* <FontAwesome name="fas fa-bars" /> */}
-        <i className="fas fa-bars" />
-        {/* <p>Show Menu</p> */}
-      </div>
-    )}
+    <BarWrapper>
+      <Bar position="top" showMenu={showMenu} />
+      <Bar position="middle" showMenu={showMenu} />
+      <Bar position="bottom" showMenu={showMenu} />
+    </BarWrapper>
   </Wrapper>
 );
 

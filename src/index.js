@@ -1,6 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./reset.css";
+import { ThemeProvider } from "styled-components";
+import { mainTheme } from "./style/themes";
+import "./style/reset.css";
 import Router from "./Router";
 
-ReactDOM.render(<Router />, document.getElementById("app"));
+ReactDOM.render(
+  <ThemeProvider theme={mainTheme}>
+    <Router />
+  </ThemeProvider>,
+  document.getElementById("app"),
+);

@@ -5,6 +5,6 @@ const Wrapper = styled.div`
   background-color: yellow;
 `;
 
-const SettingPlayers = <Wrapper>This is the setting players view</Wrapper>;
+const SettingPlayers = () => <Wrapper>This is the setting players view</Wrapper>;
 
 export default SettingPlayers;

@@ -23,13 +23,13 @@ const NavBarLayout = ({ items, showMenu, toogleMenu, hideMenu }) => (
         ))}
       </ItemsWrapper>
     </Wrapper>
-    <Spacer className="spacer" />
+    <Spacer />
   </React.Fragment>
 );
 
 NavBarLayout.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
-  showMenu: PropTypes.func.isRequired,
+  showMenu: PropTypes.bool.isRequired,
   hideMenu: PropTypes.func.isRequired,
   toogleMenu: PropTypes.func.isRequired,
 };
