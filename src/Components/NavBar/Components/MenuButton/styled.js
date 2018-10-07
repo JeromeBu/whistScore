@@ -7,61 +7,59 @@ export const Wrapper = styled.div`
   color: ${props => props.theme.fontColor};
   max-width: 150px;
   text-align: right;
-  padding: 0 20px;
+  padding: 0 10px;
   display: flex;
   align-items: center;
-  line-height: ${props => props.theme.navBarHeight};
-  height: ${props => props.theme.navBarHeight};
-
-  &:hover {
-    color: ${props => props.theme.linkHoverColor};
-    cursor: pointer;
-  }
-
-  /* .hidden {
-    visibility: hidden;
-  } */
+  line-height: ${({ theme }) => theme.navBarHeight};
+  height: ${({ theme }) => theme.navBarHeight};
+  cursor: pointer;
 
   @media screen and (min-width: ${props => props.theme.tablettesBreakPoint}) {
     display: none;
   }
 `;
 
+const pVertic = 0.6;
+const pHoriz = 0.8;
+const hBar = 0.2;
+const color = "#4385F4";
+
 export const BarWrapper = styled.div`
-  width: 60px;
-  height: 45px;
+  width: calc(${pHoriz} * ${({ theme }) => theme.navBarHeight});
+  height: calc(${pVertic} * ${({ theme }) => theme.navBarHeight});
   position: relative;
   transform: rotate(0deg);
   transition: 0.5s ease-in-out;
-  cursor: pointer;
   text-align: right;
 `;
 
 export const Bar = styled.span`
   display: block;
   position: absolute;
-  height: 9px;
+  height: calc(${hBar * pVertic} * ${({ theme }) => theme.navBarHeight});
   width: 100%;
-  background: #d3531a;
-  border-radius: 9px;
+  background: ${color};
+  border-radius: calc(${pVertic / 2 - (pVertic * hBar) / 2} * ${({ theme }) => theme.navBarHeight});
   opacity: 1;
   left: 0;
   transform: rotate(0deg);
   transition: 0.25s ease-in-out;
-  ${({ position, showMenu }) => !showMenu && position === "top" && "top: 0px"}
-  ${({ position, showMenu }) => !showMenu && position === "middle" && "top: 18px"}
-  ${({ position, showMenu }) => !showMenu && position === "bottom" && "top: 36px"}
-  ${({ position, showMenu }) => showMenu
-    && position === "top"
-    && `top: 18px;
-    transform: rotate(135deg);`}
-  ${({ position, showMenu }) => showMenu
+  ${({ position, showMenu }) => !showMenu && position === "top" && "top: 0;"}
+  ${({ position, showMenu, theme }) => !showMenu
     && position === "middle"
-    && `top: 18px;
+    && `top: calc(${pVertic / 2 - (pVertic * hBar) / 2} * ${theme.navBarHeight});`}
+  ${({ position, showMenu }) => !showMenu && position === "bottom" && "bottom: 0"}
+  ${({ position, showMenu, theme }) => showMenu
+    && position === "top"
+    && `top: calc(${pVertic / 2 - (pVertic * hBar) / 2} * ${theme.navBarHeight});;
+    transform: rotate(135deg);`}
+  ${({ position, showMenu, theme }) => showMenu
+    && position === "middle"
+    && `top: calc(${pVertic / 2 - (pVertic * hBar) / 2} * ${theme.navBarHeight});;
     opacity: 0;
-    left: -60px;`}
-  ${({ position, showMenu }) => showMenu
+    left: -50px;`}
+  ${({ position, showMenu, theme }) => showMenu
     && position === "bottom"
-    && `top: 18px;
+    && `bottom: calc(${pVertic / 2 - (pVertic * hBar) / 2} * ${theme.navBarHeight});
     transform: rotate(-135deg);`}
 `;
