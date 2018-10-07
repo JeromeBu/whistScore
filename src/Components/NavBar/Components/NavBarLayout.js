@@ -4,9 +4,9 @@ import { Wrapper, Spacer, Logo, ItemsWrapper } from "./styled";
 import NavBarItem from "./NavBarItem";
 import MenuButton from "./MenuButton";
 
-const NavBarLayout = ({ items, showMenu, toogleMenu, hideMenu }) => (
+const NavBarLayout = ({ refLinker, items, showMenu, toogleMenu, hideMenu }) => (
   <React.Fragment>
-    <Wrapper>
+    <Wrapper innerRef={refLinker}>
       <Logo src="images/logo.png" alt="logo" />
       <MenuButton showMenu={showMenu} toogleMenu={toogleMenu} />
       <ItemsWrapper showMenu={showMenu}>
@@ -29,8 +29,9 @@ const NavBarLayout = ({ items, showMenu, toogleMenu, hideMenu }) => (
 
 NavBarLayout.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
-  showMenu: PropTypes.bool.isRequired,
   hideMenu: PropTypes.func.isRequired,
+  refLinker: PropTypes.func.isRequired,
+  showMenu: PropTypes.bool.isRequired,
   toogleMenu: PropTypes.func.isRequired,
 };
 

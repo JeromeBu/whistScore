@@ -8,14 +8,12 @@ export const Wrapper = styled.li`
   a {
     line-height: ${props => props.theme.navBarHeight};
     color: ${props => props.theme.fontColor};
-    opacity: ${props => props.disabled && "0.4"};
-    ${props =>
-      !props.disabled &&
-      `&:hover {
-        color: ${props.theme.linkHoverColor};
+    opacity: ${props => (props.disabled ? "0.4" : "0.8")};
+    ${props => !props.disabled
+      && `&:hover {
+        opacity: 1;
         cursor: pointer;
-      }
-      `};
+      }`};
   }
   @media screen and (max-width: ${props => props.theme.tablettesBreakPoint}) {
     display: block;
@@ -28,6 +26,5 @@ export const Wrapper = styled.li`
       width: 100%;
       padding-right: 2em;
     }
-    /* border: 1px solid black; */
   }
 `;
