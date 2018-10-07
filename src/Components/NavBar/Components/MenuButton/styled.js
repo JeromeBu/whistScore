@@ -22,7 +22,6 @@ export const Wrapper = styled.div`
 const pVertic = 0.6;
 const pHoriz = 0.8;
 const hBar = 0.2;
-const color = "#4385F4";
 
 export const BarWrapper = styled.div`
   width: calc(${pHoriz} * ${({ theme }) => theme.navBarHeight});
@@ -38,7 +37,7 @@ export const Bar = styled.span`
   position: absolute;
   height: calc(${hBar * pVertic} * ${({ theme }) => theme.navBarHeight});
   width: 100%;
-  background: ${color};
+  background: ${({ theme }) => theme.fontColor};
   border-radius: calc(${pVertic / 2 - (pVertic * hBar) / 2} * ${({ theme }) => theme.navBarHeight});
   opacity: 1;
   left: 0;
