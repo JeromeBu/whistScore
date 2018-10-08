@@ -45,8 +45,8 @@ export default class NavBarContainer extends React.Component {
   render() {
     const infoForItems = [
       { icon: "fas fa-tachometer-alt", title: "Home", route: "/" },
-      { title: "Players", route: "/settingPlayers" },
-      { title: "Rules", route: "/settingRules" },
+      { title: "Players", route: "/players" },
+      { title: "Rules", route: "/rules" },
       { title: "Game", route: "/game" },
       { icon: "fab fa-gg", title: "Something Disabled", disabled: true },
     ];

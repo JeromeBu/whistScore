@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { createHistory as history } from "history";
 import App from "./App";
-import SettingRules from "./Views/SettingRules";
-import SettingPlayers from "./Views/SettingPlayers";
+import Rules from "./Views/Rules";
+import Players from "./Views/Players";
 import Game from "./Views/Game";
 import Home from "./Views/Home";
 
@@ -13,8 +13,8 @@ const myRouter = () => (
       <App>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/settingPlayers" component={SettingPlayers} />
-          <Route path="/settingRules" component={SettingRules} />
+          <Route path="/players" component={Players} />
+          <Route path="/rules" component={Rules} />
           <Route path="/game" component={Game} />
         </Switch>
       </App>

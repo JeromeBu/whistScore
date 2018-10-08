@@ -7,7 +7,7 @@ import MenuButton from "./MenuButton";
 const NavBarLayout = ({ refLinker, items, showMenu, toogleMenu, hideMenu }) => (
   <React.Fragment>
     <Wrapper innerRef={refLinker}>
-      <Logo src="images/logo.png" alt="logo" />
+      <Logo src="images/logo.svg" alt="logo" />
       <MenuButton showMenu={showMenu} toogleMenu={toogleMenu} />
       <ItemsWrapper showMenu={showMenu}>
         {items.map(element => (

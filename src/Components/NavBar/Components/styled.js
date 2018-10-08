@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
   right: 0;
@@ -23,6 +24,7 @@ export const ItemsWrapper = styled.ul`
   align-items: center;
   background-color: ${({ theme }) => theme.navBarBackgroundColor};
   transition: 0.25s ease-in-out;
+  border: 1px solid ${({ theme }) => theme.fontColor};
 
   @media screen and (max-width: ${({ theme }) => theme.tablettesBreakPoint}) {
     position: absolute;

@@ -5,6 +5,6 @@ const Wrapper = styled.div`
   background-color: red;
 `;
 
-const SettingRules = () => <Wrapper>This is the setting rules view</Wrapper>;
+const Rules = () => <Wrapper>This is the setting rules view</Wrapper>;
 
-export default SettingRules;
+export default Rules;
